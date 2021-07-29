@@ -12,8 +12,9 @@ const disappearedNumbers = (arr) => {
   // steps
   // do not sort the array else it might become nlog(n) time complexity
   // get the length of the array
-  // const len = arr.length()
   let newArr = [...Array(arr.length).keys()].map((curr, inx) => inx + 1)
+  // filter such that we are only returning elements not in the
+  // passed (params) array
   return newArr.filter(el => !arr.includes(el))
   // remove duplicates
 }
