@@ -1,4 +1,4 @@
-const disappearedNumbers = (arr = []) => {
+const disappearedNumbers = (arr) => {
 
   // find the missing numbers as an array in a list
   // of array(numbers) of length n
@@ -13,7 +13,9 @@ const disappearedNumbers = (arr = []) => {
   // do not sort the array else it might become nlog(n) time complexity
   // get the length of the array
   // const len = arr.length()
-  
-  
-
+  let newArr = [...Array(arr.length).keys()].map((curr, inx) => inx + 1)
+  return newArr.filter(el => !arr.includes(el))
+  // remove duplicates
 }
+
+console.log(disappearedNumbers([1, 1, 2, 2, 2]))
