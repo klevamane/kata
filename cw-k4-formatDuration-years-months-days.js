@@ -38,14 +38,14 @@ A unit of time must be used "as much as possible". It means that the function sh
 */
 
 const formatDuration = (seconds) => {
-  let year = 0;
+  let years = 0;
   let days = 0;
   let hours = 0;
   let minutes = 0;
 
   while (seconds >= 31536000) {
     seconds -= 31536000;
-    year += 1;
+    years += 1;
   }
 
   while (seconds >= 86400) {
@@ -62,51 +62,19 @@ const formatDuration = (seconds) => {
     minutes += 1;
     seconds -= 60;
   }
+  let response = functionSetValues2({ years, days, hours, minutes, seconds });
 
-  let yearText = "year",
-    daysText = "day",
-    hoursText = "hour";
-  let minutesText = "minute",
-    secondsText = "second";
-  let units = [];
-  let values = [];
-
-  yearText, units, (values = setUnitValues(year, yearText, units, values));
-  daysText, units, (values = setUnitValues(days, daysText, units, values));
-  hoursText, units, (values = setUnitValues(hours, hoursText, units, values));
-  minutesText,
-    units,
-    (values = setUnitValues(minutes, minutesText, units, values));
-  secondsText,
-    units,
-    (values = setUnitValues(seconds, secondsText, units, values));
-
-  let response = "";
-  const responseLength = units.length;
-
-  for (i = 0; i < responseLength - 1; i++) {
-    if (i > 0) response += ", ";
-    response += `${values[i]} ${units[i]}`;
-  }
-
-  if (responseLength === 1) {
-    response = `${values[0]} ${units[0]}`;
-  }
-  if (responseLength > 1) {
-    response += ` and ${values.pop()} ${units[units.length - 1]}`;
-  }
-
-  // it is expected that the length of units = length of values array
-  return response;
+  return response.join(", ").replace(/,([^,]*)$/, " and" + "$1");
 };
 
-function setUnitValues(value, unitText, unitsList, valuesList) {
-  if (value >= 1) {
-    unitText += value > 1 ? "s" : "";
-    unitsList.push(unitText);
-    valuesList.push(value);
+const functionSetValues2 = (values, allArr = []) => {
+  for ([key, value] of Object.entries(values)) {
+    if (value >= 1) {
+      key = value > 1 ? (key += "") : key.slice(0, -1);
+      allArr.push(`${value} ${key}`);
+    }
   }
-  return unitText, unitsList, valuesList;
-}
+  return allArr;
+};
 
-console.log(formatDuration(3662))
+console.log(formatDuration(62));
