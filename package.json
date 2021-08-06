@@ -4,7 +4,7 @@
   "description": "",
   "main": "cw-6k-function partialKeys (obj) {.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage"
   },
   "keywords": [],
   "author": "",

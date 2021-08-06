@@ -38,6 +38,7 @@ A unit of time must be used "as much as possible". It means that the function sh
 */
 
 const formatDuration = (seconds) => {
+  if (seconds === 0) return "now";
   let years = 0;
   let days = 0;
   let hours = 0;
@@ -68,7 +69,7 @@ const formatDuration = (seconds) => {
 };
 
 const functionSetValues = (values) => {
-  let allArr = []
+  let allArr = [];
   for ([key, value] of Object.entries(values)) {
     if (value >= 1) {
       key = value > 1 ? (key += "") : key.slice(0, -1);
@@ -78,4 +79,6 @@ const functionSetValues = (values) => {
   return allArr;
 };
 
-console.log(formatDuration(62));
+// console.log(formatDuration(62));
+
+module.exports = formatDuration;
