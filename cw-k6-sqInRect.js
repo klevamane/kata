@@ -40,3 +40,5 @@ const sqInRect = (lgt, width) => {
 };
 
 console.log(sqInRect(5, 3));
+
+module.exports = sqInRect;
