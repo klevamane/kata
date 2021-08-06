@@ -62,12 +62,13 @@ const formatDuration = (seconds) => {
     minutes += 1;
     seconds -= 60;
   }
-  let response = functionSetValues2({ years, days, hours, minutes, seconds });
+  let response = functionSetValues({ years, days, hours, minutes, seconds });
 
   return response.join(", ").replace(/,([^,]*)$/, " and" + "$1");
 };
 
-const functionSetValues2 = (values, allArr = []) => {
+const functionSetValues = (values) => {
+  let allArr = []
   for ([key, value] of Object.entries(values)) {
     if (value >= 1) {
       key = value > 1 ? (key += "") : key.slice(0, -1);
