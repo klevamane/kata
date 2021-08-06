@@ -17,14 +17,14 @@ Output string must be two numbers separated by a single space, and highest numbe
 
 */
 
-function highAndLow(numbers){
-  numbers = numbers.split(" ").sort((a, b) => a - b)
-  numbers
-  return `${numbers.slice(-1)[0]} ${numbers[0]}`
+function highAndLow(numbers) {
+  numbers = numbers.split(" ").sort((a, b) => a - b);
+  numbers;
+  return `${numbers.slice(-1)[0]} ${numbers[0]}`;
 }
 
-const arr = [1,2,4]
+const arr = [1, 2, 4];
 
-arr.sort()
+arr.sort();
 
-console.log(highAndLow("1 2 0 4 5 -2 -1"))
+console.log(highAndLow("1 2 0 4 5 -2 -1"));
