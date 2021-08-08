@@ -1,5 +1,5 @@
 const { expect } = require("@jest/globals");
-const formatDuration = require("../cw-k4-formatDuration-years-months-days");
+const formatDuration = require("./cw-k4-formatDuration-years-months-days");
 
 describe("Test for formDuration function", () => {
   test("it should return now", () => {

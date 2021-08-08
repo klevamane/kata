@@ -36,3 +36,11 @@ function stringValue(str) {
 }
 
 console.log(anagrams("racer", ["crazer", "carer", "racar", "caers", "racer"]));
+
+const arr = [2,1,2];
+
+const response = arr.every((current, index) => {
+  return index === 0 || current <= arr[index - 1];
+});
+
+console.log(response);
