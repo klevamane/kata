@@ -28,11 +28,6 @@
 
 <!-- PROJECT LOGO -->
 <br />
-<p align="center">
-  <a href="https://github.com/klevamane/kata">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
   <h3 align="center">Kata</h3>
 
   <p align="center">
@@ -79,17 +74,12 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+Solutions for various katas
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
 
 ### Built With
 
-- []()
-- []()
-- []()
+- Javascript
 
 <!-- GETTING STARTED -->
 
@@ -161,9 +151,8 @@ Project Link: [https://github.com/klevamane/kata](https://github.com/klevamane/k
 
 ## Acknowledgements
 
-- []()
-- []()
-- []()
+- [Onengiye Richard](onengiye.richard@gmail.com)
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
