@@ -26,16 +26,10 @@ function solve(s) {
 };
 
 function addUp(str) {
-  return str.split('').reduce((acc, ele) => charToValue(ele) + acc, 0)
+  return str.split('').reduce((acc, ele) => (ele.charCodeAt(0) - 96) + acc, 0)
 
 }
 
-function totalStringValue(str) {
-  return str.reduce((acc, ele) => charToValue(ele) + acc, 0)
-}
-function charToValue(c) {
-  return c.charCodeAt(0) - 96;
-}
 
 console.log(solve('zbeq'))
 console.log("z".charCodeAt(0) - 96)
