@@ -17,19 +17,21 @@ values "str" = 19 + 20 + 18 = 57 and "ngth" = 14 + 7 + 20 + 8 = 49. The highest 
 
 */
 
-const vowels = ['a', 'e', 'i', 'o', 'u']
+const vowels = ["a", "e", "i", "o", "u"];
 
 function solve(s) {
   // zodiacs z d ac
-  const range = s.replace(/[aeiou]+/g, ' ').trim().split(' ').map(addUp)
-  return Math.max(...range)
-};
-
-function addUp(str) {
-  return str.split('').reduce((acc, ele) => (ele.charCodeAt(0) - 96) + acc, 0)
-
+  const range = s
+    .replace(/[aeiou]+/g, " ")
+    .trim()
+    .split(" ")
+    .map(addUp);
+  return Math.max(...range);
 }
 
+function addUp(str) {
+  return str.split("").reduce((acc, ele) => ele.charCodeAt(0) - 96 + acc, 0);
+}
 
-console.log(solve('zbeq'))
-console.log("z".charCodeAt(0) - 96)
+console.log(solve("zbeq"));
+console.log("z".charCodeAt(0) - 96);
